@@ -1,6 +1,6 @@
 
-import { Headline } from '../components/Headline'
-import { Links } from '../components/Links'
+import { Headline } from 'src/components/Headline'
+import { Links } from 'src/components/Links'
 
 import styles from './Main.module.css'
 
