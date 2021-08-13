@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import { useCallback, useState } from 'react'
+
+import { useInputArray } from 'src/hooks/useInputArray'
 
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
@@ -8,19 +9,7 @@ import { Main } from '../components/Main'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const [text,setText] = useState("");
-  const [array, setArray] = useState([]);
-
-  const handleAdd = useCallback(() => {
-    setArray((array) => {
-      if(array.some(item => item === text)) {
-        alert("同じ要素が既に存在します")
-        return array;
-      }  
-      return [...array, text]
-    }
-    )
-  },[text])
+  const [text, array, handleAdd, onChangeValue] = useInputArray();
 
   return (
     <div className={styles.container}>
@@ -31,7 +20,7 @@ export default function Home() {
       </Head>
       <Header/>
 
-      <input type="text" value={text} onChange={(e) => setText(e.target.value)}/>
+      <input type="text" value={text} onChange={onChangeValue}/>
       <button onClick={handleAdd}>追加</button>
       <ul>
         {array.map(item => {
