@@ -1,4 +1,9 @@
 {
     "javascript.preferences.importModuleSpecifier": "non-relative",
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "files.autoSave": "afterDelay",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnSave": true
 }
