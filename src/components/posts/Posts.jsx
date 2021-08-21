@@ -1,11 +1,36 @@
 
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useReducer, useState } from 'react'
 
 export const Posts = () => {
+    const initialState = {
+        data: [],
+        loading: true,
+        error: null,
+    };
 
-    const [posts, setPosts] = useState([]);
-    const [loading, setLoding] = useState(true);
-    const [error, setError] = useState(null);
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case "end": {
+                return {
+                    ...state,
+                    data: action.data,
+                    loading: false,
+                };
+            }
+            case "error": {
+                return {
+                    ...state,
+                    loading: false,
+                    error: action.error,
+                };
+            }
+            default: {
+                throw new Error("no such adtion type!")
+            }
+        }
+    }
+
+    const [state, dispatch] = useReducer(reducer, initialState);
 
     const getPosts = useCallback(async () => {
         try {
@@ -14,31 +39,30 @@ export const Posts = () => {
                 throw new Error("エラーが発生したため、データ取得に失敗しました。")
             }
             const json = await res.json();
-            setPosts(json);
+            dispatch({ type: "end", data: json });
         } catch (error) {
-            setError(error);
+            dispatch({ type: "error", error });
         }
-        setLoding(false);
     }, [])
 
     useEffect(() => {
         getPosts();
-    }, [getPosts])
+    }, [getPosts]);
 
-    if (loading) {
+    if (state.loading) {
         return (<p>loding now ....</p>);
     }
-    if (error) {
-        return (<div>{error.message}</div>);
+    if (state.error) {
+        return (<div>{state.error.message}</div>);
     }
-    if (posts.length === 0) {
+    if (state.data.length === 0) {
         return (<h1>データがありません。</h1>);
     }
 
 
     return (
         <ol>
-            {posts.map(post => {
+            {state.data.map(post => {
                 return (
                     <li key={post.id}>{post.title}</li>
                 )
