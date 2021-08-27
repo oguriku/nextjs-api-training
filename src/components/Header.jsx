@@ -5,11 +5,11 @@ import styles from 'src/components/Header.module.css'
 export function Header() {
   return (
       <header className={styles.header}>
+        <Link href="/">
+            <a className={styles.anchor}>Index</a>
+        </Link>
         <Link href="/posts">
             <a className={styles.anchor}>Posts</a>
-        </Link>
-        <Link href="/about">
-            <a className={styles.anchor}>About</a>
         </Link>
       </header>
   )
