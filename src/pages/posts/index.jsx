@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Posts } from 'src/components/posts/posts';
 
-import { Header } from 'src/components/Header'
+import { Header } from 'src/components/header/Header'
 import styles from 'src/styles/Home.module.css'
 
 export default function Home() {

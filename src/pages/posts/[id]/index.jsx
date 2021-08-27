@@ -1,5 +1,5 @@
 
-import { Header } from 'src/components/Header'
+import { Header } from 'src/components/header/Header'
 import { Post } from 'src/components/Post/Post'
 import styles from 'src/styles/Home.module.css'
 
