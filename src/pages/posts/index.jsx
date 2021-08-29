@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import { Posts } from 'src/components/posts/posts';
+import { Posts as PostsComponent } from 'src/components/posts/posts';
 
 import { Header } from 'src/components/header/Header'
 
-export default function Home() {
+const Posts = () => {
 
   return (
     <div>
@@ -12,7 +12,8 @@ export default function Home() {
       </Head>
       <Header />
 
-      <Posts />
+      <PostsComponent />
     </div>
   )
 }
+export default Posts;
