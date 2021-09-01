@@ -29,3 +29,7 @@ export const useComments = () => {
 export const useCommentsByPostId = id => {
     return useFetchArray(id ? `https://jsonplaceholder.typicode.com/comments?postId=${id}` : null)
 }
+
+export const usePostsByUserId = id => {
+    return useFetchArray(id ? `https://jsonplaceholder.typicode.com/posts?userId=${id}` : null)
+}

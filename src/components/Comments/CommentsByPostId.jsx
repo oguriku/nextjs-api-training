@@ -4,7 +4,6 @@ import { useCommentsByPostId } from "src/hooks/useFetchArray";
 export const CommentsByPostId = props => {
     const { data, error, isLoading, isEmpty } = useCommentsByPostId(props.id);
 
-
     if (isLoading) {
         return (<p>loding now ....</p>);
     }
