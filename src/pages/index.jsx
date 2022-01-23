@@ -7,7 +7,6 @@ import { Title } from 'src/components/Title/Titile';
 import { UsersComponent } from 'src/components/Users/Users';
 
 const Index = () => {
-
   return (
     <div>
       <Head>
