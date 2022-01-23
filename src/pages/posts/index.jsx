@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import { Posts as PostsComponent } from 'src/components/posts/posts';
+import { Posts as PostsComponent } from 'src/components/Posts/posts';
 
-import { Header } from 'src/components/header/Header'
+import { Header } from 'src/components/Header/Header'
 
 const Posts = () => {
 

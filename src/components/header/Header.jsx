@@ -4,9 +4,9 @@ import styles from 'src/components/header/Header.module.css'
 
 export function Header() {
   const navItems = [
-    { href: "/", label: " Index" },
-    { href: "/posts", label: "Posts" },
+    { href: "/", label: " Home" },
     { href: "/users", label: "Users" },
+    { href: "/posts", label: "Posts" },
     { href: "/comments", label: "Comments" }
   ]
 
@@ -19,6 +19,7 @@ export function Header() {
           </Link>
         )
       })}
+      <h1></h1>
     </header>
   )
 }

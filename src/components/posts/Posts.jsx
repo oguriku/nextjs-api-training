@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { usePosts } from "src/hooks/useFetchArray";
 
+import { usePosts } from "src/hooks/useFetchArray";
+import styles from 'src/components/posts/Posts.module.css';
 
 export const Posts = () => {
     const { data, error, isLoading, isEmpty } = usePosts();
@@ -16,16 +17,19 @@ export const Posts = () => {
     }
 
     return (
-        <ol>
-            {data.map(post => {
-                return (
-                    <li key={post.id}>
-                        <Link href={`/posts/${post.id}`}>
-                            <a>{post.title}</a>
-                        </Link>
-                    </li>
-                )
-            })}
-        </ol>
+        <div className={styles.postslist}>
+            <h2 className={styles.subTitle}>Posts</h2>
+            <ol>
+                {data.map(post => {
+                    return (
+                        <li className={styles.post} key={post.id}>
+                            <Link href={`/posts/${post.id}`}>
+                                <a>{post.title}</a>
+                            </Link>
+                        </li>
+                    )
+                })}
+            </ol>
+        </div>
     )
 }

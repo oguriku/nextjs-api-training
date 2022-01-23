@@ -1,6 +1,6 @@
 
 import Head from "next/head";
-import { Header } from "src/components/header/Header";
+import { Header } from "src/components/Header/Header";
 import { UserComponent } from "src/components/User/User";
 
 

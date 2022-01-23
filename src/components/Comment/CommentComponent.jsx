@@ -1,5 +1,6 @@
 import { PostByCommentId } from "src/components/Post/PostByCommentId";
 import { useComment } from "src/hooks/useComment";
+import styles from 'src/components/Comment/Comment.module.css';
 
 export const CommentComponent = () => {
 
@@ -13,12 +14,8 @@ export const CommentComponent = () => {
     }
 
     return (
-        <div>
-            <h1>{data.body}</h1>
-            <ul>
-                <li>{data.name}</li>
-                <li>{data.email}</li>
-            </ul>
+        <div className={styles.comment}>
+            <h1 className={styles.subTitle}>{data.body}</h1>
             <h2>元の記事</h2>
             <PostByCommentId id={data.postId}/>
         </div>

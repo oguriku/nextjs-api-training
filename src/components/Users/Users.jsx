@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { useUsers } from "src/hooks/useFetchArray";
+import styles from 'src/components/Users/Users.module.css';
 
 export const UsersComponent = () => {
 
@@ -16,16 +17,15 @@ export const UsersComponent = () => {
     }
 
     return (
-        <ol>
-            <h1>Users</h1>
+        <ol className={styles.users}>
+            <h1 className={styles.subTitle}>Users</h1>
             {data.map(user => {
                 return (
-                    <li key={user.id}>
+                    <li className={styles.usersList} key={user.id}>
                         <Link href={`/users/${user.id}`}>
                             <a>{user.name}</a>
                         </Link>
                     </li>
-
                 )
             })}
         </ol>

@@ -1,0 +1,18 @@
+.subTitle{
+    font-size: 3rem;
+    border-bottom: 2px black solid;
+    padding:20px 0;
+    font-family: 'Philosopher',serif;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.post{
+    width: 70%;
+    margin: 0 auto;
+}
+.post p{
+    text-align: center;
+}
+.postbyComment:hover{
+    text-decoration: underline;
+}

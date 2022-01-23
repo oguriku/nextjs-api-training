@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { CommentsComponent } from "src/components/Comments/Comments";
 
-import { Header } from "src/components/header/Header";
+import { Header } from "src/components/Header/Header";
 
 const Comments = () => {
 

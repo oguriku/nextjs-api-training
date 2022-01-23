@@ -1,5 +1,5 @@
 
-import { Header } from 'src/components/header/Header'
+import { Header } from 'src/components/Header/Header'
 import { Post } from 'src/components/Post/Post'
 
 const PostsId = () => {

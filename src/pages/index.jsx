@@ -1,19 +1,24 @@
 import Head from 'next/head'
+import { CommentsComponent } from 'src/components/Comments/Comments';
 
-
-import { Header } from 'src/components/header/Header'
+import { Header } from 'src/components/Header/Header'
+import { Posts } from 'src/components/Posts/Posts'
+import { Title } from 'src/components/Title/Titile';
+import { UsersComponent } from 'src/components/Users/Users';
+import Comments from 'src/pages/comments';
 
 const Index = () => {
 
   return (
     <div>
       <Head>
-        <title>Index page</title>
+        <title>Home</title>
       </Head>
       <Header />
-      <h1>Next.jsで学ぶReact講座</h1>
-      <p>JSONplaceholderのAPIを色々叩いてみるよ</p>
-
+      <Title title="JSONplaceholder" />
+      <UsersComponent/>
+      <Posts/>
+      <CommentsComponent/>
     </div>
   )
 };

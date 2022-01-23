@@ -1,5 +1,7 @@
 import Link from "next/link"
-import { usePostsByUserId } from "src/hooks/useFetchArray"
+
+import { usePostsByUserId } from "src/hooks/useFetchArray";
+import styles from 'src/components/posts/Posts.module.css';
 
 export const PostsByUserId = props => {
     const { data, error, isLoading, isEmpty } = usePostsByUserId(props.id);
@@ -16,17 +18,19 @@ export const PostsByUserId = props => {
 
 
     return (
-        <ol>
-            <h1>Posts</h1>
-            {data.map((post) => {
-                return (
-                    <li key={post.id}>
-                        <Link href={`/posts/${post.id}`}>
-                            <a>{post.title}</a>
-                        </Link>
-                    </li>
-                )
-            })}
-        </ol>
+        <div>
+            <h1 className={styles.subTitle}>Posts by<br/> {props.name}</h1>
+            <ol>
+                {data.map((post) => {
+                    return (
+                        <li className={styles.post} key={post.id}>
+                            <Link href={`/posts/${post.id}`}>
+                                <a>{post.title}</a>
+                            </Link>
+                        </li>
+                    )
+                })}
+            </ol>
+        </div>
     )
 }

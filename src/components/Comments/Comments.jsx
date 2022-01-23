@@ -1,5 +1,7 @@
 import Link from "next/link";
+
 import { useComments } from "src/hooks/useFetchArray";
+import styles from 'src/components/Comments/Comments.module.css';
 
 
 export const CommentsComponent = () => {
@@ -17,11 +19,11 @@ export const CommentsComponent = () => {
     }
 
     return (
-        <ol>
-            <h1>Comments</h1>
+        <ol className={styles.comments}>
+            <h1 className={styles.subTitle}>Comments</h1>
             {data.map(comment => {
                 return (
-                    <li key={comment.id}>
+                    <li className={styles.commentlist} key={comment.id}>
                         <Link href={`/comments/${comment.id}`}>
                             <a>{comment.body}</a>
                         </Link>
