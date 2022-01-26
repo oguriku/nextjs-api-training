@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { usePosts } from "src/hooks/useFetchArray";
-import styles from 'src/components/posts/Posts.module.css';
+import styles from 'src/components/Posts/Posts.module.css';
 
 export const Posts = () => {
     const { data, error, isLoading, isEmpty } = usePosts();

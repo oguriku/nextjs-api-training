@@ -6,7 +6,7 @@ import { Posts } from 'src/components/Posts/Posts'
 import { Title } from 'src/components/Title/Titile';
 import { UsersComponent } from 'src/components/Users/Users';
 
-const Index = () => {
+const Home = () => {
   return (
     <div>
       <Head>
@@ -20,4 +20,4 @@ const Index = () => {
     </div>
   )
 };
-export default Index;
+export default Home;
