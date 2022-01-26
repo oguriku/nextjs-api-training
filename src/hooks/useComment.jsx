@@ -1,12 +1,12 @@
 
-import useSWR from "swr"
+import useSWR from "swr";
 import { useRouter } from "next/dist/client/router";
 
-import { fetcher } from "src/utils/fetcher"
+import { fetcher } from "src/utils/fetcher";
 
 export const useComment = () => {
     const router = useRouter();
-    const { data, error } = useSWR(router.query.id ? `https://jsonplaceholder.typicode.com/comments/${router.query.id}`: null, fetcher);
+    const { data, error } = useSWR(router.query.id  ? `https://jsonplaceholder.typicode.com/comments/${router.query.id}`: null, fetcher);
 
     return {
         data,

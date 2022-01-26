@@ -16,6 +16,7 @@ export const Post = () => {
     if (error) {
         return (<div>{error.message}</div>);
     }
+    
 
     return (
         <div className={styles.post}>

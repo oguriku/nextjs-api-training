@@ -7,10 +7,10 @@ export const CommentComponent = () => {
     const { data, error, isLoading } = useComment();
 
     if (isLoading) {
-        return (<p>loding now ....</p>);
+        return (<p>loding now ....<br/>表示されない場合はHOMEに戻って下さい。</p>);
     }
     if (error) {
-        return (<div>{error.message}</div>);
+        return (<p>{error.message}</p>);
     }
 
     return (

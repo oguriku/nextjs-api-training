@@ -19,7 +19,6 @@ export function Header() {
           </Link>
         )
       })}
-      <h1></h1>
     </header>
   )
 }
