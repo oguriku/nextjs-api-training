@@ -1,6 +1,6 @@
 
 import Head from "next/head";
-import { Header } from "src/components/Header/Header";
+
 import { UserComponent } from "src/components/User/User";
 
 
@@ -11,7 +11,6 @@ const User = () => {
             <Head>
                 <title>Users Page</title>
             </Head>
-            <Header />
             <UserComponent />
         </div>
     )

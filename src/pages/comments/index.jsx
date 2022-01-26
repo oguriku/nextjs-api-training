@@ -1,7 +1,6 @@
 import Head from "next/head";
-import { CommentsComponent } from "src/components/Comments/Comments";
 
-import { Header } from "src/components/Header/Header";
+import { CommentsComponent } from "src/components/Comments/Comments";
 
 const Comments = () => {
 
@@ -10,7 +9,6 @@ const Comments = () => {
             <Head>
                 <title>Users Page</title>
             </Head>
-            <Header />
             <CommentsComponent />
         </div>
     )

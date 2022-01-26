@@ -1,13 +1,9 @@
 
-import { Header } from 'src/components/Header/Header'
-import { Post } from 'src/components/Post/Post'
+import { Post } from 'src/components/Post/Post';
 
 const PostsId = () => {
     return (
-        <div>
-            <Header />
-            <Post />
-        </div>
+        <Post />
     )
 }
 export default PostsId;
