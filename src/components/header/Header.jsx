@@ -2,7 +2,7 @@ import Link from "next/link"
 
 import styles from 'src/components/Header/Header.module.css'
 
-export function Header() {
+export const Header = () => {
   const navItems = [
     { href: "/", label: " Home" },
     { href: "/users", label: "Users" },
