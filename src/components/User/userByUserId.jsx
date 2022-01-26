@@ -9,7 +9,7 @@ export const UserByUserId = props => {
     );
 
     if (!data && !error) {
-        return (<dev>ローディング中</dev>);
+        return (<div>ローディング中</div>);
     }
 
     if (error) {
